@@ -11,10 +11,10 @@ import "./styles/styles.scss";
 
 const store = configureStore();
 
-store.dispatch(addExpense({ description: "First 20", amount: 10, createAt: 500 }));
-store.dispatch(addExpense({ description: "Second 20", amount: 20, createAt: 100 }));
-store.dispatch(addExpense({ description: "Thirth 30", amount: 30, createAt: 1500 }));
-store.dispatch(addExpense({ description: "Fourth 40", amount: 40, createAt: 1100 }));
+store.dispatch(addExpense({ id: 1, description: "First 20", amount: 10, createAt: 500000,note:"note 1" }));
+store.dispatch(addExpense({ id: 2, description: "Second 20", amount: 20, createAt: 100,note:"note 2" }));
+// store.dispatch(addExpense({ id: 3, description: "Thirth 30", amount: 30, createAt: 1500 }));
+// store.dispatch(addExpense({ id: 4, description: "Fourth 40", amount: 40, createAt: 1100 }));
 //store.dispatch(setTextFilter("des"));
 
 
@@ -22,7 +22,7 @@ store.dispatch(addExpense({ description: "Fourth 40", amount: 40, createAt: 1100
 const state = store.getState();
 const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
 
-console.log("state", state);
+//console.log("state", state);
 //console.log(visibleExpenses);
 
 const jsx = (

@@ -5,13 +5,16 @@ import { SingleDatePicker } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
 
 export default class ExpenseForm extends Component {
-    state = {
-        description: "",
-        amount: "",
-        note: "",
-        createAt: moment(),
-        calendarFocused: false,
-        error: ""
+    constructor(props) {
+        super(props);
+        this.state = {
+            description: props.expense ? props.expense.description : "",
+            amount: props.expense ? (props.expense.amount / 100).toString() : "",
+            note: props.expense ? props.expense.note : "",
+            createAt: props.expense ? moment(props.expense.createAt) : moment(),
+            calendarFocused: false,
+            error: ""
+        };
     }
 
     onDescriptionChage = (e) => {
@@ -45,11 +48,10 @@ export default class ExpenseForm extends Component {
             this.setState({ error: "" });
             this.props.onSubmit({
                 description: this.state.description,
-                amount: parseFloat(this.state.amount, 10),
+                amount: parseFloat(this.state.amount, 10) * 100,
                 createAt: this.state.createAt.valueOf(),
                 note: this.state.note
             });
-            console.log("submitted");
         }
     }
 
