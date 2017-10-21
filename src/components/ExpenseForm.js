@@ -34,7 +34,7 @@ export default class ExpenseForm extends Component {
     }
 
     onNoteChage = (e) => {
-        e.persist();
+        //e.persist();
         this.setState({ note: e.target.value });
     };
 
