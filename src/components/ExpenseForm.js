@@ -8,7 +8,7 @@ export default class ExpenseForm extends Component {
         super(props);
         this.state = {
             description: props.expense ? props.expense.description : "",
-            amount: props.expense ? (props.expense.amount / 100).toString() : "",
+            amount: props.expense ? (props.expense.amount).toString() : "",
             note: props.expense ? props.expense.note : "",
             createAt: props.expense ? moment(props.expense.createAt) : moment(),
             calendarFocused: false,
@@ -47,7 +47,7 @@ export default class ExpenseForm extends Component {
             this.setState({ error: "" });
             this.props.onSubmit({
                 description: this.state.description,
-                amount: parseFloat(this.state.amount, 10) * 100,
+                amount: parseFloat(this.state.amount, 10),
                 createAt: this.state.createAt.valueOf(),
                 note: this.state.note
             });

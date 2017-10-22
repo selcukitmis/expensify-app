@@ -119,7 +119,7 @@ exports[`should render ExpenseForm correctly with expense data 1`] = `
       type="text"
     />
     <input
-      defaultValue="1095"
+      defaultValue="109500"
       onChange={[Function]}
       placeholder="Amount"
       type="text"

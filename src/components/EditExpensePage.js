@@ -8,7 +8,6 @@ const EditExpensePage = props => {
     <ExpenseForm
       expense={props.expense}
       onSubmit={(updatedExpense) => {
-        console.log("ss")
         props.dispatch(editExpense(props.expense.id, updatedExpense));
         props.history.push("/");
       }} />
