@@ -12,9 +12,9 @@ exports[`should render ExpenseListItem with expense 1`] = `
   </Link>
   <p>
     amount: 
-    195
+    195.0
      - createAt: 
-    0
+    Jan 1, 1970
   </p>
 </div>
 `;
